@@ -8,13 +8,14 @@ base: core18
 grade: stable
 
 apps:
-  # daemon:
-  #   daemon: simple
-  #   restart-condition: always
-  #   command-chain:
-  #     - bin/run-daemon
-  #     - bin/wayland-launch
-  #   command: bin/flutterdemo
+  daemon:
+    daemon: simple
+    restart-condition: always
+    command-chain:
+      - bin/run-daemon
+      - bin/wayland-launch
+    command: bin/flutterdemo
+    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
 
   super-cool-app:
     command-chain:
@@ -28,12 +29,13 @@ parts:
     plugin: flutter
     flutter-target: lib/main.dart # The main entry-point file of the application
 
-  # mir-kiosk-snap-launch:
-  #   plugin: dump
-  #   source: https://github.com/MirServer/mir-kiosk-snap-launch.git
-  #   override-build:  $SNAPCRAFT_PART_BUILD/build-with-plugs.sh opengl pulseaudio wayland
-  #   stage-packages:
-  #     - inotify-tools
+  mir-kiosk-snap-launch:
+    plugin: dump
+    source: https://github.com/MirServer/mir-kiosk-snap-launch.git
+    override-build:  $SNAPCRAFT_PART_BUILD/build-with-plugs.sh opengl pulseaudio wayland
+    stage-packages:
+      - inotify-tools
+
   assets:
     plugin: nil
     stage-packages:
