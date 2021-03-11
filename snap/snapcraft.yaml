@@ -21,7 +21,7 @@ apps:
     command-chain:
       - bin/wayland-launch
     command: flutterdemo
-    extensions: [flutter-dev] # Where "master" defines which Flutter channel to use for the build
+    extensions: [flutter-master] # Where "master" defines which Flutter channel to use for the build
 
 parts:
   super-cool-app:
