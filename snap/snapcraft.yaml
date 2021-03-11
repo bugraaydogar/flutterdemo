@@ -7,12 +7,6 @@ confinement: strict
 base: core18
 grade: stable
 
-slots:
-  dbus-super-cool-app: # adjust accordingly to your app name
-    interface: dbus
-    bus: session
-    name: com.example.flutterdemo # adjust accordingly to your app name and
-    
 apps:
   # daemon:
   #   daemon: simple
@@ -31,8 +25,6 @@ apps:
       - opengl
       - network
       - wayland
-    slots:
-      - dbus-super-cool-app
 parts:
   super-cool-app:
     source: .
