@@ -45,3 +45,18 @@ parts:
   #   override-build:  $SNAPCRAFT_PART_BUILD/build-with-plugs.sh opengl pulseaudio wayland
   #   stage-packages:
   #     - inotify-tools
+  assets:
+    plugin: nil
+    stage-packages:
+    - dmz-cursor-theme
+    - fonts-dejavu
+    - fonts-freefont-ttf
+    - fonts-ubuntu
+
+layout:
+  /usr/share/fonts:
+    bind: $SNAP/usr/share/fonts
+  /etc/fonts:
+    bind: $SNAP/etc/fonts
+  /usr/share/icons:
+    bind: $SNAP/usr/share/icons
