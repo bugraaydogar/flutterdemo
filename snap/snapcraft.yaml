@@ -21,10 +21,7 @@ apps:
     #   - bin/wayland-launch
     command: flutterdemo
     extensions: [flutter-dev] # Where "master" defines which Flutter channel to use for the build
-    plugs:
-      - opengl
-      - network
-      - wayland
+
 parts:
   super-cool-app:
     source: .
